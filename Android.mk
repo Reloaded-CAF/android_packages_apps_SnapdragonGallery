@@ -59,18 +59,7 @@ LOCAL_JAVA_LIBRARIES += org.apache.http.legacy
 
 LOCAL_JARJAR_RULES := $(LOCAL_PATH)/jarjar-rules.txt
 
-LOCAL_REQUIRED_MODULES += privapp_whitelist_com.android.gallery3d.xml
-
 include $(BUILD_PACKAGE)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := privapp_whitelist_com.android.gallery3d.xml
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT_ETC)/permissions
-LOCAL_PRODUCT_MODULE := true
-LOCAL_SRC_FILES := $(LOCAL_MODULE)
-include $(BUILD_PREBUILT)
 
 # Use the following include to make gallery test apk
 include $(call all-makefiles-under, $(LOCAL_PATH))
